@@ -1,6 +1,5 @@
 import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Navbar} from './components/navigation/Navbar.jsx';
-import './App.css'
 import {Home, Kitchen, Login, Order, Withdraw} from './pages';
 
 function App() {
