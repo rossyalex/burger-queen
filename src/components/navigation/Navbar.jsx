@@ -22,11 +22,6 @@ export function Navbar() {
           </li>
         </ul>
       </nav>
-      <nav>
-
-
-
-      </nav>
     </div>
   )
 }
