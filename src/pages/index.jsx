@@ -1,13 +1,26 @@
-import {Init} from '../components/main/Init';
+import {Init} from '../components/layout/Init';
+import {RegisterForm} from '../components/forms/RegisterForm';
+import {LoginForm} from '../components/forms/LoginForm.jsx';
+import {Home as HomeView} from '../components/main/Home.jsx';
+
 
 export const Login = () => {
   return(
-    <Init/>
+    <Init view={LoginForm}/>
   )
 }
 
-export const Home = () => <h3>Home Burger</h3>
+export const Register = () => {
+  return (
+    <Init view={RegisterForm} />
+  )
+}
 
+export const Home = () => {
+  return (
+    <Init view={HomeView} />
+  )
+}
 
 export const Order = () => <h3>Order Burger</h3>
 

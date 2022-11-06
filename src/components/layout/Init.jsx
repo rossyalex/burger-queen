@@ -1,7 +1,7 @@
-import {Login} from '../forms/Login.jsx';
+
 import burger from '../../assets/h.png'
 
-export const Init = () => {
+export const Init = ({ view: Component }) => {
   return (
     <div className="p-4 mx-auto w-[600px]">
       <div className="mt-20">
@@ -16,7 +16,7 @@ export const Init = () => {
         </h1>
       </div>
       <div className="mt-20">
-        <Login/>
+        <Component/>
       </div>
     </div>
   );
