@@ -2,6 +2,9 @@ import {Init} from '../components/layout/Init';
 import {RegisterForm} from '../components/forms/RegisterForm';
 import {LoginForm} from '../components/forms/LoginForm.jsx';
 import {Home as HomeView} from '../components/main/Home.jsx';
+import {Order as OrderView} from '../components/main/Order.jsx';
+import {Kitchen as KitchenView} from '../components/main/Kitchen.jsx';
+import {Withdraw as WithdrawView} from '../components/main/Withdraw.jsx';
 
 
 export const Login = () => {
@@ -22,8 +25,20 @@ export const Home = () => {
   )
 }
 
-export const Order = () => <h3>Order Burger</h3>
+export const Order = () => {
+  return (
+   <OrderView/>
+  )
+}
 
-export const Kitchen = () => <h3>Kitchen Burger</h3>
+export const Kitchen = () => {
+  return (
+    <KitchenView/>
+  )
+}
 
-export const Withdraw = () => <h3>Withdraw Burger</h3>
+export const Withdraw = () =>{
+  return (
+    <WithdrawView/>
+  )
+}
