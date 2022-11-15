@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "StarJedi";
+  src: url("./assets/fonts/StarJedi.ttf");
+}
+
+@font-face {
+  font-family: "Soloist3D";
+  src: url("./assets/fonts/Soloist3D.otf");
+}

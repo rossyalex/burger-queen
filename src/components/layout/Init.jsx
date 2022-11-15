@@ -1,5 +1,5 @@
 
-import burger from '../../assets/h.png'
+import burger from '../../assets/img/h.png'
 
 export const Init = ({ view: Component }) => {
   return (
@@ -8,14 +8,14 @@ export const Init = ({ view: Component }) => {
         <img src={burger} alt="burger" className="w-[400px] mx-auto"/>
       </div>
       <div className="mt-10">
-        <h1 className="text-center text-white font-bold text-5xl">
+        <h1 className="text-center text-amber-500 font-soloist3D text-6xl">
           Burger
         </h1>
-        <h1 className="text-center text-white font-bold text-5xl">
+        <h1 className="text-center text-amber-500 font-soloist3D text-6xl">
           Wars
         </h1>
       </div>
-      <div className="mt-20">
+      <div className="mt-20 mx-auto">
         <Component/>
       </div>
     </div>

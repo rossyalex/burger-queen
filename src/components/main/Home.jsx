@@ -17,23 +17,24 @@ export const Home = () => {
 
   return(
     <>
-      <Link to="/order"
-        className="mx-auto w-3/5 border rounded bg-amber-500 text-2xl font-bold p-2 my-4">
-        Crear Pedido
-      </Link>
-      <Link to="/kitchen"
-            className="mx-auto w-3/5 border rounded bg-amber-500 text-2xl font-bold p-2 my-4">
-        Cocina
-      </Link>
-      <Link to="/withdraw"
-            className="mx-auto w-3/5 border rounded bg-amber-500 text-2xl font-bold p-2 my-4">
-        Retirar
-      </Link>
-      <button onClick={ logoutAction }
-            className="mx-auto w-3/5 border rounded bg-amber-500 text-2xl font-bold p-2 my-4">
-        Cerrar Sesión
-      </button>
-
+      <div className="mx-auto flex flex-col">
+        <Link to="/order"
+              className="mx-auto w-3/6 rounded-full bg-amber-500 text-2xl text-center font-starJedi p-1 my-4">
+          Crear Pedido
+        </Link>
+        <Link to="/kitchen"
+              className="mx-auto w-3/6 rounded-full bg-amber-500 text-2xl text-center font-starJedi p-1 my-4">
+          Cocina
+        </Link>
+        <Link to="/withdraw"
+              className="mx-auto w-3/6 rounded-full bg-amber-500 text-2xl text-center font-starJedi p-1 my-4">
+          Retirar
+        </Link>
+        <button onClick={ logoutAction }
+                className="mx-auto w-3/6 rounded-full bg-amber-500 text-2xl font-starJedi p-1 my-4">
+          Cerrar Sesión
+        </button>
+      </div>
     </>
   )
 

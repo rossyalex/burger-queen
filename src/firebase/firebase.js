@@ -94,6 +94,61 @@ export const logout = () => {
   signOut(auth);
 };
 
+/**
+ * Funcion para obtener todas las hamburguesas
+ * @returns {Promise<*[]>}
+ */
+export const burgers = async () => {
+  const collectionBurgers = collection(db, "burgers");
+  const data = [];
+  const query = await getDocs(collectionBurgers);
+  query.forEach((doc) => {
+    data.push({ ...doc.data(), id: doc.id })
+  })
+  return data;
+}
+
+/**
+ * Funcion que obtiene los desayunos
+ * @returns {Promise<*[]>}
+ */
+export const breakfasts = async () => {
+  const collectionBreakfast = collection(db, "breakfast");
+  const data = [];
+  const query = await getDocs(collectionBreakfast);
+  query.forEach((doc) => {
+    data.push({...doc.data(), id: doc.id})
+  })
+  return data;
+}
+
+/**
+ * Funcion que obtiene los adicionales
+ * @returns {Promise<*[]>}
+ */
+export const additionals = async () => {
+  const collectionAdditional = collection(db, "additional");
+  const data = [];
+  const query = await getDocs(collectionAdditional);
+  query.forEach((doc) => {
+    data.push({...doc.data(), id: doc.id})
+  })
+  return data;
+}
+
+/**
+ * Funcion que obtiene las bebidas
+ * @returns {Promise<*[]>}
+ */
+export const drinks = async () => {
+  const collectionDrink = collection(db, "drinks");
+  const data = [];
+  const query = await getDocs(collectionDrink);
+  query.forEach((doc) => {
+    data.push({...doc.data(), id: doc.id})
+  })
+  return data;
+}
 export {
   auth,
   db

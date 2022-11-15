@@ -4,7 +4,7 @@ import {Register, Home, Kitchen, Login, Order, Withdraw} from './pages';
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-main-banner bg-center bg-cover bg-no-repeat h-[1200px]">
+      <div className="bg-main-banner bg-center bg-cover bg-no-repeat h-full">
         <Routes>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/" element={<Login />}></Route>

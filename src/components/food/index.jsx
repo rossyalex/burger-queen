@@ -1,149 +1,80 @@
-import coffee from '../../assets/cafe.png'
-import coffeeAmerican from '../../assets/cafe-americano.png'
-import coffeeMilk from '../../assets/cafe-leche.png'
-import sandwich from '../../assets/sanw.png'
-import juice from '../../assets/jugo-jedi.png'
+import {useEffect, useState} from 'react';
+import {breakfasts, burgers, additionals, drinks} from '../../firebase/firebase.js';
 
 export const Breakfast = () => {
+  const [breakfast, setBreakfast] = useState([])
+  useEffect(() => {
+    async function getBreakfast() {
+      const data = await breakfasts();
+      setBreakfast(data);
+    }
+    getBreakfast()
+  }, [])
   return (
-    <>
-      <div className="flex flex-wrap gap-4 mb-4 mx-auto">
-        <div className="w-64 h-[420px] mx-auto rounded overflow-hidden bg-blue-50 shadow-lg">
-          <img className="w-3/5 h-3/5 mx-auto" src={coffeeAmerican} alt="Sunset in the mountains" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 uppercase">Café Americano</div>
-          </div>
-          <div className="flex flex-col mx-auto">
-            <p
-              className="mx-auto mb-6 w-12 bg-gray-200 rounded-full text-center align-middle text-md font-semibold text-gray-700 mb-1">
-              5$
-            </p>
-            <button className="mx-auto rounded-full bg-black text-white p-2 uppercase">Agregar</button>
-          </div>
-        </div>
-        <div className="w-64 h-[420px] mx-auto rounded overflow-hidden bg-blue-50 shadow-lg">
-          <img className="w-3/5 h-3/5 mx-auto" src={coffeeMilk} alt="Sunset in the mountains" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 uppercase">Café con Leche</div>
-          </div>
-          <div className="flex flex-col mx-auto">
-            <p
-              className="mx-auto mb-6 w-12 bg-gray-200 rounded-full text-center align-middle text-md font-semibold text-gray-700 mb-1">
-              7$
-            </p>
-            <button className="mx-auto rounded-full bg-black text-white p-2 uppercase">Agregar</button>
-          </div>
-        </div>
-        <div className="w-64 h-[420px] mx-auto rounded overflow-hidden bg-blue-50 shadow-lg">
-          <img className="w-3/5 h-3/5 mx-auto" src={sandwich} alt="Sunset in the mountains" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 uppercase">Sandwich</div>
-          </div>
-          <div className="flex flex-col mx-auto">
-            <p
-              className="mx-auto mb-6 w-12 bg-gray-200 rounded-full text-center align-middle text-md font-semibold text-gray-700 mb-1">
-              10$
-            </p>
-            <button className="mx-auto rounded-full bg-black text-white p-2 uppercase">Agregar</button>
-          </div>
-        </div>
-        <div className="w-64 h-[420px] mx-auto rounded overflow-hidden bg-blue-50 shadow-lg">
-          <img className="w-3/5 h-3/5 mx-auto" src={juice} alt="Sunset in the mountains" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 uppercase">Jugos Naturales</div>
-          </div>
-          <div className="flex flex-col mx-auto">
-            <p
-              className="mx-auto mb-6 w-12 bg-gray-200 rounded-full text-center align-middle text-md font-semibold text-gray-700 mb-1">
-              7$
-            </p>
-            <button className="mx-auto rounded-full bg-black text-white p-2 uppercase">Agregar</button>
-          </div>
-        </div>
-      </div>
-    </>
+    <CardFood data={breakfast} />
   )
 }
 
 export const Burger = () => {
+  const [burger, setBurger] = useState([])
+  useEffect (()=> {
+    async function getBurger() {
+      const data = await burgers()
+      setBurger(data)
+    }
+    getBurger()
+  }, [])
   return (
-    <>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="burger-pollo" className="w-[100px] mx-auto"/>
-        Burger Pollo 10$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="burger-pollo-doble" className="w-[100px] mx-auto"/>
-        Burger Doble de Pollo 15$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="burger-carne" className="w-[100px] mx-auto"/>
-        Burger Carne 10$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="burger-carne-doble" className="w-[100px] mx-auto"/>
-        Burger Doble de Carne 15$
-      </button>
-    </>
+    <CardFood data={burger}/>
   )
 }
 
 export const Additional = () => {
+  const [additional, setAdditional] = useState([])
+  useEffect (()=> {
+    async function getAdditional() {
+      const data = await additionals()
+      setAdditional(data)
+    }
+    getAdditional()
+  }, [])
   return (
-    <>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="papas" className="w-[100px] mx-auto"/>
-        Papas fritas 5$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="aros-cebolla" className="w-[100px] mx-auto"/>
-        Aros de Cebolla 5$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="queso" className="w-[100px] mx-auto"/>
-        Queso 1$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="huevo" className="w-[100px] mx-auto"/>
-        Huevo 1$
-      </button>
-    </>
+    <CardFood data={additional}/>
   )
 }
 
 export const Drinks = () => {
+  const [drink, setDrink] = useState([])
+  useEffect (()=> {
+    async function getDrink() {
+      const data = await drinks()
+      setDrink(data)
+    }
+    getDrink()
+  }, [])
   return (
-    <>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="agua-500ml" className="w-[100px] mx-auto"/>
-        Agua 500ml 5$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="agua-700ml" className="w-[100px] mx-auto"/>
-        Agua 700ml 7$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="bebida/gaseosa-500ml" className="w-[100px] mx-auto"/>
-        Bebida/gaseosa 500ml 7$
-      </button>
-      <button
-        className="mx-auto w-3/2 border rounded bg-blue text-2xl font-bold p-5 my-4">
-        <img src={cafe} alt="bebida/gaseosa-750ml" className="w-[100px] mx-auto"/>
-        Bebida/gaseosa 750ml 10$
-      </button>
-    </>
+    <CardFood data={drink}/>
   )
+}
+
+export const CardFood = ({data}) => {
+  return data.map((food) => {
+    return (
+      <div className="w-64 h-[360px] mx-auto rounded overflow-hidden bg-blue-50 shadow-lg" key={food.id}>
+        <img className="w-2/4 h-2/4 mx-auto mt-2" src={`/src/assets/img/${food.id}.png`} alt={food.id} />
+        <div className="px-6 py-4 mx-auto">
+          <div className="font-starJedi text-xl mb-2 text-center">{food.item}</div>
+        </div>
+        <div className="flex flex-col mx-auto">
+          <p
+            className="mx-auto mb-6 w-12 bg-gray-200 rounded-full text-center align-middle text-md font-semibold text-gray-700 mb-1">
+            {food.price}$
+          </p>
+          <button className="mx-auto rounded-full bg-black text-white font-starJedi p-2">Agregar</button>
+        </div>
+      </div>
+    )
+  })
 }
 
 
