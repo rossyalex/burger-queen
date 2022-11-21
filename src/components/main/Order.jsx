@@ -68,13 +68,13 @@ export const Order = () => {
         </div>
       </div>
       <CustomerForm food={food} updateFood={setFood} total={total} updateTotal={setTotal}/>
-      <div className="mx-auto flex flex-col">
+      <div className="mx-auto flex px-8">
         <Link to="/kitchen"
-              className="mx-auto w-3/8 rounded-full bg-amber-500 text-2xl text-center font-starJedi p-3 my-4">
+              className="mx-auto rounded-full bg-amber-500 text-2xl text-center font-starJedi p-3 my-4">
           Enviar a Cocina
         </Link>
         <Link to="/home"
-              className="mx-auto  w-3/8 rounded-full bg-amber-500 text-2xl text-center font-starJedi p-3 my-4">
+              className="mx-auto rounded-full bg-amber-500 text-2xl text-center font-starJedi p-3 my-4">
           volver al Home
         </Link>
       </div>
