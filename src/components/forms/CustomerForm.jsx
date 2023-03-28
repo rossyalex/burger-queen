@@ -13,7 +13,6 @@ export const CustomerForm = ({food, updateFood, total, updateTotal}) => {
       table,
     }
     localStorage.setItem('client', JSON.stringify(client))
-    localStorage.setItem('food', JSON.stringify([]))
   }
   return (
     <>

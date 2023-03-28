@@ -25,6 +25,7 @@ export const Order = () => {
     foodParse.forEach(item => totalFood += (item.quantity * item.price))
     setTotal(totalFood)
   }
+
   useEffect(() => {
     function getLocalfood () {
       const foodParse = JSON.parse(localStorage.getItem('food'))
@@ -45,17 +46,17 @@ export const Order = () => {
         </button>
         <button
           onClick={() => setMenu('burger')}
-          className={`${menu === 'burger' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full bg-white font-starJedi p-2 my-4`}>
+          className={`${menu === 'burger' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full font-starJedi p-2 my-4`}>
           Burger
         </button>
         <button
           onClick={() => setMenu('additional')}
-          className={`${menu === 'additional' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full bg-white font-starJedi p-2 my-4`}>
+          className={`${menu === 'additional' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full font-starJedi p-2 my-4`}>
           Adicionales
         </button>
         <button
           onClick={() => setMenu('drinks')}
-          className={`${menu === 'drinks' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full bg-white font-starJedi p-2 my-4`}>
+          className={`${menu === 'drinks' ? 'bg-red-700 text-white': 'bg-white'} mx-4 w-1/8 border-transparent inline-block rounded-full font-starJedi p-2 my-4`}>
           Bebidas
         </button>
         <div className="mx-4">

@@ -6,6 +6,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 export const Home = () => {
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
+  localStorage.setItem('food', JSON.stringify([]))
   useEffect(() => {
     if (loading) return;
     if (!user) navigate("/")
